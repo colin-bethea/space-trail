@@ -15,6 +15,7 @@ h2 {
 
 ul {
   font-size: 25px;
+  text-decoration: none;
 }
 
 #gameScreen {
@@ -37,6 +38,8 @@ ul {
   min-height: 524px;
   padding: 12px;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+
 }
 
 .statsBox h2 {
@@ -153,4 +156,20 @@ ion-icon {
   vertical-align: middle;
   margin-left: 2px;
   padding-bottom: 3px;
+}
+
+li {
+  text-decoration: none;
+  padding: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+}
+
+ul {
+  list-style: none;
+  list-style-type: none;
+  padding-left: 0px;
+  border-radius: 10px;
 }
