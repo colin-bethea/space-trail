@@ -306,7 +306,12 @@ function travel(rivOrTrail) {
 }
 
 function updateStats() {
-  $(".totalDays").text(game.totalDays);
+  
+  var daysString = "";
+  
+  daysString = "Day " + game.totalDays;
+
+  $(".totalDays").html(daysString);
 
   var nameString = "";
   caravan.party.forEach(function(member) {
