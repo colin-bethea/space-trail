@@ -1,0 +1,153 @@
+html, body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-family: 'Sulphur Point', sans-serif;
+  background-color: #303952;
+  color: white;
+  outline: none;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+ul {
+  font-size: 25px;
+}
+
+#gameScreen {
+  display: none;
+}
+
+.mourn, .talk, .restartGame, .crossRiver {
+  display: none;
+}
+
+.randomEvent {
+  text-align: center;
+  border: solid 2px #f7d794;
+  height: auto;
+  min-height: 61px;
+}
+
+.statsBox {
+  margin-top: 30px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-color: #f7d794;
+  border-size: 3px;
+  height: auto;
+  min-height: 524px;
+}
+
+.statsBox h2 {
+  color: #fff;
+  margin: 10px 0;
+}
+
+.statsBox h1 {
+  margin: 0;
+  font-size: 60px;
+  font-weight: 700;
+  color: #fff;
+}
+
+input[type = "text"] {
+  background-color: #fff;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #303952;
+  width: 300px;
+  font-size: 30px;
+  height: 35px;
+  margin-bottom: 5px;
+  outline: none;
+}
+
+label {
+  font-size: 20px;
+}
+
+h1#start{
+  /*color: #F45116;*/
+  color: #fff;
+  font-size: 50px;
+  margin-bottom: -6px;;
+}
+
+
+.btn, button {
+  color: black;
+  background-color: #f7d794;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 25px;
+  border-radius: 5px;
+  width: 175px;
+  border: none;
+}
+
+button {
+  margin-top: 15px;
+}
+
+.btn:hover, {
+  background-color: #f19066;
+  color: white;
+}
+
+#trailScreen {
+  padding-top: 35px;
+  padding-left: 35px;
+}
+
+.restOutcome, .trailOutcome, .healOutcome, .mournOutcome, .huntOutcome, .gameOverLoseMessage, .gameOverWinScreen {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: solid 3px blue;
+  border-radius: 5px;
+  padding-left: 20px;
+}
+
+.options {
+  margin-top: 20px;
+}
+
+.btn {
+  margin-right: 5px;
+}
+
+span#randomEventMessage {
+  font-size: 40px;
+  padding-top: 20px;
+}
+
+.events {
+  font-size: 40px;
+}
+
+.playAgain {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#checkPoint {
+  font-size: 40px;
+  color: #D103D5;
+}
+
+#memberSick {
+  color: #f7d794;
+}
+
+#foodZero, #medicineZero {
+  color: red;
+}
