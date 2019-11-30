@@ -148,3 +148,9 @@ a:hover {
 #foodZero, #medicineZero {
   color: red;
 }
+
+ion-icon {
+  vertical-align: middle;
+  margin-left: 2px;
+  padding-bottom: 3px;
+}

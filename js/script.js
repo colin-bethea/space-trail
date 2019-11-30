@@ -327,7 +327,7 @@ function updateStats() {
   if (caravan.food <= 0) {
     foodString = "<span id='foodZero'>Food: 0</span>";
   } else {
-    foodString = "Food: " + caravan.food;
+    foodString = "" + caravan.food;
   }
   $(".food").html(foodString);
 
@@ -335,7 +335,7 @@ function updateStats() {
   if (caravan.medicine <= 0) {
     medString = "<span id='foodZero'>Medicine: 0</span>";
   } else {
-    medString = "Medicine: " + caravan.medicine;
+    medString = "" + caravan.medicine;
   }
   $(".medicine").html(medString);
 }
