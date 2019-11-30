@@ -94,8 +94,8 @@ button {
   margin-top: 15px;
 }
 
-.btn:hover, {
-  background-color: #f19066;
+.btn:hover, button:hover {
+  background-color: #3742fa;
   color: #fff;
 }
 
