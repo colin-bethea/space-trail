@@ -7,6 +7,7 @@ var game = {
 
 var caravan = {
   party: [],
+  cash: 700,
   food: 200,
   medicine: 5
 }
@@ -48,6 +49,14 @@ function foodLoss() {
   if (caravan.food <= 0) {
     caravan.food = 0;
     console.log("Out of food!");
+  }
+}
+
+function cashLoss() {
+  caravan.cash -= 2 * caravan.party.length;
+  if (caravan.cash <= 0) {
+    caravan.cash = 0;
+    console.log("Out of cash!");
   }
 }
 
@@ -276,6 +285,20 @@ function rest() {
   game.totalDays++;
 }
 
+function work() {
+  $("#randomEventMessage, #checkPoint").empty();
+  var cashGained = rollNumber(4, 16);
+  caravan.cash += cashGained * caravan.party.length;
+  $("#event").html("Everyone in your party worked for "+cashGained+" dollars!");
+  cashLoss();
+  caravan.party.forEach(function (element) {
+    element.healthLoss();
+  });
+  checkDeath();
+  game.totalDays++;
+
+}
+
 function hunt() {
   $("#randomEventMessage, #checkPoint").empty();
   var meatGained = rollNumber(4, 16);
@@ -327,6 +350,14 @@ function updateStats() {
   });
 
   $(".wagonMembers").html(nameString);
+
+  var cashString = "";
+  if (caravan.cash <= 0) {
+    cashString = "<span id='cashZero'>Cash: 0</span>";
+  } else {
+    cashString = "" + caravan.cash;
+  }
+  $(".cash").html(cashString);
 
   var foodString = "";
   if (caravan.food <= 0) {
@@ -406,6 +437,12 @@ $(function() {
   $(".rest").click(function() {
     $(".imgHeader").css("background-image", "url(img/rest.png)");
     rest();
+    updateStats();
+  });
+
+  $(".work").click(function() {
+    $(".imgHeader").css("background-image", "url(img/hunt.png)");
+    work();
     updateStats();
   });
 
