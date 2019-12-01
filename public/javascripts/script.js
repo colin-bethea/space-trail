@@ -1,8 +1,6 @@
 var game = {
   totalDays: 0,
   daysLeft: 50,
-  imgArray: ["url('../images/trail.jpg')", "url(../images/trail2.jpg)", "url(../images/trail3.jpg)"],
-  imgArrayIndex: 0
 };
 
 var caravan = {
@@ -76,7 +74,6 @@ function checkDeath() {
         $("#gameScreen").hide();
         gameWinSong.play();
         $("#event").html("Everyone in your party has died. The game is over.");
-        $(".imgHeader").css("background-image", "url(img/endGameLoser.jpg)");
         $(".restartGame").show();
 
         return;
@@ -88,7 +85,6 @@ function checkDeath() {
   if (deathString) {
     deathString += "Bummer.";
     $("#event").html(deathString);
-    $(".imgHeader").css("background-image", "url(img/deathScreenHeader.jpg)");
   }
 }
 
@@ -186,14 +182,12 @@ function gameChecker() {
     $("#randomEventMessage, #checkPoint, #event").empty();
     var left = caravan.party.length;
     $("#checkPoint").html("WINNER! WINNER! CHICKEN DINNER! Only " + left + " of your party has survived.");
-    $(".imgHeader").css("background-image", "url(img/endGameWin.jpg)");
     $(".restartGame").show();
     $(".continueOnTrail, .rest, .mourn, .hunt, .talk, .heal").hide();
     gameWinSong.play();
   } else if (game.daysLeft === 40) { // 40 days from end (and multiples of 20)...fort
     $("#randomEventMessage, #checkPoint").empty();
     $("#checkPoint").html("Welcome. You've reached " + checkpoints[0] + "!");
-    $(".imgHeader").css("background-image", "url(img/fortlaramie.png)");
     checkpoints.shift();
     $(".hunt").hide();
     $(".talk").show();
@@ -201,7 +195,6 @@ function gameChecker() {
   } else if (game.daysLeft === 30) { // 30 days from end (and multiples of 20)...river
     $("#randomEventMessage, #checkPoint").empty();
     $("#checkPoint").html("You've reached " + checkpoints[0] + "! Proceed with caution.");
-    $(".imgHeader").css("background-image", "url(img/blueriver.png)");
     checkpoints.shift();
     $(".hunt").hide();
     $(".continueOnTrail").hide();
@@ -212,7 +205,6 @@ function gameChecker() {
   } else if (game.daysLeft === 20) { // 20 days from end (and multiples of 20)...river
     $("#randomEventMessage, #checkPoint").empty();
     $("#checkPoint").html("Welcome. You've reached " + checkpoints[0] + "!");
-    $(".imgHeader").css("background-image", "url(img/fortbridger.png)");
     checkpoints.shift();
     $(".hunt").hide();
     $(".talk").show();
@@ -220,7 +212,7 @@ function gameChecker() {
   } else if (game.daysLeft === 10) { // 10 days from end (and multiples of 20)...river
     $("#randomEventMessage, #checkPoint").empty();
     $("#checkPoint").html("You've reached " + checkpoints[0] + "! Proceed with caution.");
-    $(".imgHeader").css("background-image", "url(img/snakeriver.png)");
+
     checkpoints.shift();
     $(".hunt").hide();
     $(".continueOnTrail").hide();
@@ -410,13 +402,6 @@ $(function() {
   $(".continueOnTrail").click(function() {
     $("#randomEventMessage, #checkPoint").empty();
 
-    $(".imgHeader").css("background-image", game.imgArray[game.imgArrayIndex]);
-    if(game.imgArrayIndex < 2) {
-      game.imgArrayIndex++;
-    } else {
-      game.imgArrayIndex = 0;
-    }
-
     travel("trail");
     gameChecker();
     console.log(game.daysLeft);
@@ -435,31 +420,26 @@ $(function() {
   });
 
   $(".rest").click(function() {
-    $(".imgHeader").css("background-image", "url(img/rest.png)");
     rest();
     updateStats();
   });
 
   $(".work").click(function() {
-    $(".imgHeader").css("background-image", "url(img/hunt.png)");
     work();
     updateStats();
   });
 
   $(".hunt").click(function() {
-    $(".imgHeader").css("background-image", "url(img/hunt.png)");
     hunt();
     updateStats();
   });
 
   $(".heal").click(function() {
-    $(".imgHeader").css("background-image", "url(img/dinosaurtrail.jpg)");
     medicine();
     updateStats();
   });
 
   $(".mourn").click(function() {
-    $(".imgHeader").css("background-image", "url(img/mourn.jpg)");
     console.log("part1");
     restMourn();
     updateStats();
