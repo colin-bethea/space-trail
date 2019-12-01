@@ -1,7 +1,7 @@
 var game = {
   totalDays: 0,
   daysLeft: 50,
-  imgArray: ["url(img/trail.jpg)", "url(img/trail2.jpg)", "url(img/trail3.jpg)"],
+  imgArray: ["url('../images/trail.jpg')", "url(../images/trail2.jpg)", "url(../images/trail3.jpg)"],
   imgArrayIndex: 0
 };
 
@@ -253,7 +253,7 @@ function medicine() {
       }
     });
     if (lowestHealth === 1000) {
-      $("#event").html("No one is siiiick.");
+      $("#event").html("There is no one to heal.");
     } else {
       caravan.party[index].diseases -= 1;
       caravan.medicine -= 1;
@@ -339,7 +339,7 @@ function updateStats() {
   var nameString = "";
   caravan.party.forEach(function(member) {
     if (member.diseases < 1) {
-      nameString += "<li>" + member.name + " | Health: " + member.health + "</li>";
+      nameString += "<li>" + member.name + " &#183; " + " <progress value='" + member.health + "'" + "max='100'></progress>" + "</li>";
     } else {
       var plural = "";
       if (member.diseases > 1) {

@@ -9,12 +9,12 @@
   <link href="stylesheets/style.css" type="text/css" rel="stylesheet">
   <script src="javascripts/jquery-3.1.1.js" type="text/javascript"></script>
   <script src="javascripts/script.js" type="text/javascript"></script>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
 
 <body>
   <div class="container">
-    <div class="imgHeader">
-    </div>
     <div class="randomEvent">
       <span id="checkPoint"></span>
       <span id="randomEventMessage"></span>
@@ -23,18 +23,18 @@
       <div class="col-md-4">
         <div class="statsBox">
           <h1><span class="totalDays"></span></h1>
-          <ul class="wagonMembers">
-          </ul>
           <ul>
-            <li><span class="cash"></span>
+            <li class="w-3/8 inline-block"><span class="cash"></span>
               <ion-icon name="cash"></ion-icon>
             </li>
-            <li><span class="food"></span>
+            <li class="w-3/8 inline-block"><span class="food"></span>
               <ion-icon name="beer"></ion-icon>
             </li>
-            <li><span class="medicine"></span>
+            <li class="w-3/8 inline-block"><span class="medicine"></span>
               <ion-icon name="medkit"></ion-icon>
             </li>
+          </ul>
+          <ul class="wagonMembers w-2/3">
           </ul>
         </div>
       </div>
@@ -62,16 +62,14 @@
             <label for="addMember4"></label>
             <input autocomplete="off" type="text" id="addMember4" class="form-control" placeholder="Member">
           </div>
-          <button type="submit">Start Game</button>
+          <button type="submit" class="btn">Start Game</button>
         </form>
       </div>
 
-
-
       <div class="col-md-8" id="gameScreen">
         <div class="options">
-          <span class="btn continueOnTrail">Travel Trail</span>
-          <span class="btn crossRiver">Cross the River</span>
+          <span class="btn continueOnTrail">Travel</span>
+          <span class="btn crossRiver">Wade</span>
           <span class="btn rest">Rest</span>
           <span class="btn pray">Pray</span>
           <span class="btn work">Work</span>
@@ -86,8 +84,10 @@
             <span class="btn btn-default restartGame">Play Again</span>
           </a>
         </div>
-        <div class="events">
-          <p id="event"></p>
+        <div class="events text-left">
+          <p id="event" class="text-left"></p>
+          <div class="imgHeader">
+          </div>
         </div>
       </div>
     </div>
