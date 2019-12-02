@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('oregontrail-redux:server');
+var debug = require('debug')('spacetrail-redux:server');
 var http = require('http');
 
 /**
