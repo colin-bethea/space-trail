@@ -11,6 +11,10 @@ html, body {
   padding: 0;
   font-family: 'Work Sans', sans-serif;
   background-color: #fff;
+  background-image: url("https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1633&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #000;
   outline: none;
 }
@@ -36,6 +40,10 @@ ul {
   text-align: center;
   height: auto;
   min-height: 61px;
+  background-color: #fff;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 12px;
+  border-radius: 15px;
 }
 
 .statsBox {
@@ -43,9 +51,10 @@ ul {
   height: auto;
   min-height: 524px;
   padding: 12px;
+  background-color: #fff;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   text-decoration: none;
-
+  border-radius: 15px;
 }
 
 .statsBox h2 {
@@ -128,13 +137,20 @@ button {
 }
 
 span#randomEventMessage {
-  font-size: 40px;
-  padding-top: 20px;
+  font-size: 30px;
 }
 
-.events {
-  font-size: 40px;
+#event {
+  font-size: 30px;
+  border-radius: 15px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 15px;
 }
+
 
 .playAgain {
   margin-top: 40px;
@@ -147,7 +163,8 @@ a:hover {
 
 #checkPoint {
   font-size: 40px;
-  color: #D103D5;
+  text-decoration: none;
+  color: #000;
 }
 
 #memberSick {
