@@ -331,13 +331,13 @@ function updateStats() {
   var nameString = "";
   caravan.party.forEach(function(member) {
     if (member.diseases < 1) {
-      nameString += "<li>" + member.name + " &#183; " + " <progress value='" + member.health + "'" + "max='100'></progress>" + "</li>";
+      nameString += "<li>" + member.name + " <progress value='" + member.health + "'" + "max='100' style='border-radius: 25%;'></progress>" + "</li>";
     } else {
       var plural = "";
       if (member.diseases > 1) {
         plural = "s";
       }
-      nameString += "<li><span id='memberSick'>" + member.name + " | Health: " + member.health + " | " + member.diseases + " Disease" + plural + "</span></li>";
+      nameString += "<li><span id='memberSick'>" + member.name + " " + "<ion-icon name='medical' class='align-middle ml-2'></ion-icon>" + " <progress value='" + member.health + "'" + "max='100' style='border-radius: 25%;'></progress>" + "</span></li>";
     }
   });
 
